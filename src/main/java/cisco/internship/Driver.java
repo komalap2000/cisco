@@ -1,6 +1,9 @@
 package cisco.internship;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.io.FileNotFoundException;
 
 /**
  * This will be the tester class.
@@ -10,7 +13,9 @@ public class Driver {
     /**
      * This is the main method where it will be tested.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+	Count obj = new Count();
+	
         // using the nodes provided in the graph
         Graph A = new Graph("A");
         Graph B = new Graph("B");
@@ -42,7 +47,12 @@ public class Driver {
 	System.out.println("The ArrayList that contains each node in the graph are: " + finalNodes);
 
 	// Problem 2
-	 ArrayList<ArrayList<GNode>> arrayPaths = A.paths(A);
-	 System.out.println("The ArrayList of the possible paths are: " + arrayPaths);
+	ArrayList<ArrayList<GNode>> arrayPaths = A.paths(A);
+	System.out.println("The ArrayList of the possible paths are: " + arrayPaths);
+
+	// Problem 3
+	Map<String, Integer> words = new HashMap<String, Integer>();
+        obj.countWord("tests/test02.txt", words);
+        System.out.println(words);
     }
 }
