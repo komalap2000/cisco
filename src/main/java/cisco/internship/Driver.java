@@ -12,10 +12,12 @@ public class Driver {
 
     /**
      * This is the main method where it will be tested.
+     * @param args part of the main method
+     * @throws FileNotFoundException if the file isn't found
      */
     public static void main(String[] args) throws FileNotFoundException {
-	Count obj = new Count();
-	
+        Count obj = new Count();
+        
         // using the nodes provided in the graph
         Graph A = new Graph("A");
         Graph B = new Graph("B");
@@ -28,30 +30,37 @@ public class Driver {
         Graph I = new Graph("I");
         Graph J = new Graph("J");
 
-	GNode[] aChildren = new GNode[] {B, C, D};
-	A.setChild(aChildren);
+        // using the example in the document
+        GNode[] aChildren = new GNode[] {B, C, D};
+        A.setChild(aChildren);
 
-	GNode[] bChildren = new GNode[] {E, F};
-	B.setChild(bChildren);
-	
-	GNode[] cChildren = new GNode[] {G, H, I};
-	C.setChild(cChildren);
-	
-	GNode[] dChildren = new GNode[] {J};
+        // using the example in the document 
+        GNode[] bChildren = new GNode[] {E, F};
+        B.setChild(bChildren);
+
+        // using the example in the document 
+        GNode[] cChildren = new GNode[] {G, H, I};
+        C.setChild(cChildren);
+
+        // using the example in the document 
+        GNode[] dChildren = new GNode[] {J};
         D.setChild(dChildren);
-	
-        System.out.println("Solutions to problems 1 and 2 are provided below");
 
-	// Problem 1
-	ArrayList<GNode> finalNodes = A.walkGraph(A);
-	System.out.println("The ArrayList that contains each node in the graph are: " + finalNodes);
-
-	// Problem 2
-	ArrayList<ArrayList<GNode>> arrayPaths = A.paths(A);
-	System.out.println("The ArrayList of the possible paths are: " + arrayPaths);
-
-	// Problem 3
-	Map<String, Integer> words = new HashMap<String, Integer>();
+        // Problem 1
+        System.out.println("Solution to problem 1 is provided below");
+        ArrayList<GNode> finalNodes = A.walkGraph(A);
+        System.out.println("The ArrayList that contains each node in the graph are: " + finalNodes);
+        System.out.println();
+        
+        // Problem 2
+        ArrayList<ArrayList<GNode>> arrayPaths = A.paths(A);
+        System.out.println("Solution to problem 2 is provided below");
+        System.out.println("The ArrayList of the possible paths are: " + arrayPaths);
+        System.out.println();
+        
+        // Problem 3
+        System.out.println("Solution to problem 3 is provided below");
+        Map<String, Integer> words = new HashMap<String, Integer>();
         obj.countWord("tests/test02.txt", words);
         System.out.println(words);
     }
