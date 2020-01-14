@@ -38,6 +38,7 @@ public class Graph implements GNode {
         this.children = new GNode[length];
         int counter = 0;
         
+        // will loop through the array and add / instantiate
         for (int i = 0; i < children.length; i++) {
             this.children[i] = children[i];
             counter += 1;
@@ -60,6 +61,7 @@ public class Graph implements GNode {
      * @return the children in the array.
      */
     public GNode[] getChildren() {
+        // checks to see if it is null
         if (this.children == null) {
             return empty;
         } else {
@@ -71,6 +73,7 @@ public class Graph implements GNode {
 
     /**
      * This will return the name of the node.
+     * @return the name of the string / node
      */
     public String toString() {
         return this.getName();
@@ -85,6 +88,7 @@ public class Graph implements GNode {
      * @return Arraylist containing every GNode in the graph.   
      */
     public ArrayList walkGraph(GNode temp) {
+        // will get the name of the node and add it to the list
         String name = temp.getName();
         list.add(temp);
         for (GNode child : temp.getChildren()) {
@@ -106,16 +110,17 @@ public class Graph implements GNode {
     public ArrayList paths(GNode node) {
         stack.push(node);
         temporaryLt.add(node);
-
+        // performs the actions while the stack is not empty
         while (!stack.isEmpty()) {
             GNode curTempNode = stack.peek();
             GNode[] children = curTempNode.getChildren();
 
+            // checks to see if it empty / 0
             if (children.length == 0) {
                 finalLt.add(new ArrayList<GNode>(temporaryLt));
             }
 
-            for(GNode child : children) {
+            for (GNode child : children) {
                 paths(child);
 
                 stack.pop();
