@@ -1,6 +1,5 @@
 package cisco.internship;
 
-import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Map;
 import java.io.File;
