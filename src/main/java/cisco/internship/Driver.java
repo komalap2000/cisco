@@ -63,5 +63,5 @@ public class Driver {
         Map<String, Integer> words = new HashMap<String, Integer>();
         obj.countWord("tests/test02.txt", words);
         System.out.println(words);
-    }
-}
+    } // main method
+} // class
