@@ -87,7 +87,7 @@ public class Graph implements GNode {
      * @param temp the temporary GNode
      * @return Arraylist containing every GNode in the graph.   
      */
-    public ArrayList walkGraph(GNode temp) {
+    public ArrayList<GNode> walkGraph(GNode temp) {
         // will get the name of the node and add it to the list
         String name = temp.getName();
         list.add(temp);
@@ -107,7 +107,7 @@ public class Graph implements GNode {
      * at this node
      * @return an ArrayList of all the possible paths
      */
-    public ArrayList paths(GNode node) {
+    public ArrayList<ArrayList<GNode>> paths(GNode node) {
         stack.push(node);
         temporaryLt.add(node);
         // performs the actions while the stack is not empty
